@@ -6,16 +6,24 @@ configure_terminal: true
 configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
-configure_dock: false
+configure_dock: true
 dockitems_remove: []
 # - Launchpad
-# - TV
-# - Podcasts
-# - 'App Store'
+- TV
+- Podcasts
+- 'App Store'
+- Freeform
+- Reminders
+- Contacts
+- Notes
+- Maps
 dockitems_persist: []
 # - name: "Sublime Text"
 #   path: "/Applications/Sublime Text.app/"
 #   pos: 5
+- name: "System Settings"
+  path: "/Applications/System Settings.app/"
+  pos: 3
 
 configure_sudoers: false
 sudoers_custom_config: ''
@@ -24,15 +32,16 @@ sudoers_custom_config: ''
 #   # Allow users in admin group to use sudo with no password.
 #   %admin ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/AdamPippert/dotfiles.git
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/Development/dotfiles
 dotfiles_files:
   - .zshrc
   - .gitignore
-  - .inputrc
+#  - .inputrc
   - .osx
   - .vimrc
+  - .emacs
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.

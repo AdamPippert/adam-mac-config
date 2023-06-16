@@ -1,3 +1,12 @@
+A few changes to what Jeff's done: First, I have a credentials file encrypted with ansible-vault to inject a few values automatically in advance of the setup, because I'm assuming I won't have things like git configured in advance of running this playbook.
+
+I also made some changes to the default config, because why would my defaults be Jeff's defaults?  This is gonna take awhile, I have lots of projects going on right now and this one is somewhat low priority.  It is important, though, because I never want to go through this configuration process again 100% manually.  I'm moving back to a Mac after 2 years of being on exclusively Fedora for work, and the amount of time I wasted trying to pseudo-automate configuration was mind boggling.
+
+
+
+Jeff's stuff left below (for now) for my own reference while working on my own version of this...
+
+
 <img src="https://raw.githubusercontent.com/geerlingguy/mac-dev-playbook/master/files/Mac-Dev-Playbook-Logo.png" width="250" height="156" alt="Mac Dev Playbook Logo" />
 
 # Mac Development Ansible Playbook
