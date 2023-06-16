@@ -7,17 +7,17 @@ configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
-dockitems_remove: []
+dockitems_remove: 
 # - Launchpad
-- TV
-- Podcasts
-- 'App Store'
-- Freeform
-- Reminders
-- Contacts
-- Notes
-- Maps
-dockitems_persist: []
+  - TV
+  - Podcasts
+  - 'App Store'
+  - Freeform
+  - Reminders
+  - Contacts
+  - Notes
+  - Maps
+dockitems_persist: 
 # - name: "Sublime Text"
 #   path: "/Applications/Sublime Text.app/"
 #   pos: 5
@@ -33,10 +33,12 @@ sudoers_custom_config: ''
 #   %admin ALL=(ALL) NOPASSWD: ALL
 
 dotfiles_repo: https://github.com/AdamPippert/dotfiles.git
+dotfiles_repo_version: main # this is now the default post 2020
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/Development/dotfiles
 dotfiles_files:
   - .zshrc
+  - .gitconfig
   - .gitignore
 #  - .inputrc
   - .osx
@@ -46,28 +48,44 @@ dotfiles_files:
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
+  - awscli
+  - azure-cli
   - bash-completion
   - doxygen
+  - emacs
+  - evince
+  - ffmpeg
   - gettext
   - gifsicle
   - git
-  - github/gh/gh
+  - gh
   - go
   - gpg
+  - gnuplot
   - httpie
   - iperf
+  - ipython
+  - jupyterlab
+  - kafka
+  - libcaca
   - libevent
+  - lua
+  - ncurses
   - sqlite
   - mcrypt
   - nmap
   - node
   - nvm
+  - octave
   - php
+  - podman
+  - podman-compose
   - ssh-copy-id
   - cowsay
   - readline
   - openssl
   - pv
+  - youtube-dl
   - wget
   - wrk
   - zsh-history-substring-search
@@ -80,15 +98,17 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - chromedriver
   - docker
-  - dropbox
-  - firefox
-  - google-chrome
+#  - firefox - installed by corporate tool
+  - gimp
+#  - google-chrome - installed by corporate tool
   - handbrake
   - licecap
+  - obs
+  - podman-desktop
   - sequel-ace
   - slack
-  - sublime-text
   - transmit
+  - vlc
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
@@ -119,21 +139,21 @@ pip_packages: []
 
 # Set to 'true' to configure Sublime Text.
 configure_sublime: false
-sublime_base_path: '~/Library/Application Support/Sublime Text'
-sublime_config_path: "Packages/User"
-sublime_package_control:
-  - "DocBlockr"
-  - "Dockerfile Syntax Highlighting"
-  - "FileDiffs"
-  - "GitHub Flavored Markdown Preview"
-  - "Jinja2"
-  - "Package Control"
-  - "PHP-Twig"
-  - "Pretty JSON"
-  - "SublimeLinter"
-  - "SublimeLinter-contrib-yamllint"
-  - "TrailingSpaces"
-  - "WordCount"
+#sublime_base_path: '~/Library/Application Support/Sublime Text'
+#sublime_config_path: "Packages/User"
+#sublime_package_control:
+#  - "DocBlockr"
+#  - "Dockerfile Syntax Highlighting"
+#  - "FileDiffs"
+#  - "GitHub Flavored Markdown Preview"
+#  - "Jinja2"
+#  - "Package Control"
+#  - "PHP-Twig"
+#  - "Pretty JSON"
+#  - "SublimeLinter"
+#  - "SublimeLinter-contrib-yamllint"
+#  - "TrailingSpaces"
+#  - "WordCount"
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
