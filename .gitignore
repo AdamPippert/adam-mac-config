@@ -3,3 +3,5 @@
 *.retry
 roles*
 config.yml
+creds.yml
+
