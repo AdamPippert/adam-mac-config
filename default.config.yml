@@ -148,7 +148,8 @@ pip_packages:
   state: present
 - name: openai
   state: present
-
+- name: gmail
+  state: present
 
 # Set to 'true' to configure Sublime Text.
 configure_sublime: false
