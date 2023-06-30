@@ -24,6 +24,8 @@ dockitems_persist:
 - name: "System Settings"
   path: "/Applications/System Settings.app/"
   pos: 3
+- name: "Arc"
+  path: "/Applications/Arc.app"
 
 configure_sudoers: false
 sudoers_custom_config: ''
@@ -132,10 +134,21 @@ npm_packages: []
 # - name: webpack
 #   state: present # present/absent/latest, default: present
 #   version: "^2.6" # default: N/A
-pip_packages: []
-# - name: mkdocs
-#   state: present # present/absent/latest, default: present
-#   version: "0.16.3" # default: N/A
+pip_packages: 
+- name: ansible
+  state: present # present/absent/latest, default: present
+  version: "2.10" # default: N/A
+- name: ansible-playbook
+  state: present
+- name: ansible-runbook
+  state: present
+- name: ansible-rulebook
+  state: present
+- name: langchain
+  state: present
+- name: openai
+  state: present
+
 
 # Set to 'true' to configure Sublime Text.
 configure_sublime: false
