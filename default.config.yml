@@ -69,8 +69,10 @@ homebrew_installed_packages:
   - ipython
   - jupyterlab
   - kafka
+  - ledger
   - libcaca
   - libevent
+  - lolcat
   - lua
   - ncurses
   - sqlite
@@ -151,6 +153,8 @@ pip_packages:
 - name: gmail
   state: present
 - name: Sphinx
+  state: present
+- name: jmespath
   state: present
 
 # Set to 'true' to configure Sublime Text.
