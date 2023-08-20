@@ -152,6 +152,10 @@ pip_packages:
   state: present
 - name: Sphinx
   state: present
+- name: gunicorn
+  state: present
+- name: django
+  state: present
 
 # Set to 'true' to configure Sublime Text.
 configure_sublime: false
