@@ -1,7 +1,7 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: true
+configure_dotfiles: false
 configure_terminal: true
 configure_osx: false
 
@@ -46,6 +46,7 @@ dotfiles_files:
   - .osx
   - .vimrc
   - .emacs
+  - .config/*
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
@@ -89,6 +90,7 @@ homebrew_installed_packages:
   - readline
   - openssl
   - pv
+  - yarn
   - youtube-dl
   - wget
   - wrk
@@ -106,6 +108,7 @@ homebrew_cask_apps:
   - gimp
 #  - google-chrome - installed by corporate tool
   - handbrake
+  - keycastr
   - licecap
   - obs
   - podman-desktop
@@ -140,16 +143,12 @@ pip_packages:
 - name: ansible
   state: present # present/absent/latest, default: present
   version: "2.10" # default: N/A
-- name: ansible-playbook
-  state: present
-- name: ansible-runbook
-  state: present
 - name: ansible-rulebook
   state: present
 - name: langchain
-  state: present
+  state: latest
 - name: openai
-  state: present
+  state: latest
 - name: gmail
   state: present
 - name: Sphinx
@@ -160,6 +159,18 @@ pip_packages:
   state: present
 - name: jmespath
   state: present
+- name: pypdf
+  state: present
+- name: toml
+  state: present
+- name: pygpt4all
+  state: present
+- name: chromadb
+  state: latest
+- name: pdf2image
+  state: present
+- name: gpt4all
+  state: latest
 
 # Set to 'true' to configure Sublime Text.
 configure_sublime: false
