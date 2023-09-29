@@ -94,7 +94,7 @@ homebrew_installed_packages:
   - youtube-dl
   - wget
   - wrk
-  - zsh-history-substring-search
+#  - zsh-history-substring-search
 
 homebrew_taps:
   - homebrew/core
@@ -102,6 +102,7 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - basictex
   - chromedriver
   - docker
 #  - firefox - installed by corporate tool
@@ -109,6 +110,7 @@ homebrew_cask_apps:
 #  - google-chrome - installed by corporate tool
   - handbrake
   - keycastr
+  - kitty
   - licecap
   - obs
   - podman-desktop
