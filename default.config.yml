@@ -57,6 +57,9 @@ homebrew_installed_packages:
   - doxygen
   - emacs
   - evince
+  - fd  
+  - fzf
+  - fzf-tmux
   - ffmpeg
   - gettext
   - gifsicle
@@ -90,6 +93,7 @@ homebrew_installed_packages:
   - readline
   - openssl
   - pv
+  - tmux
   - yarn
   - youtube-dl
   - wget
@@ -172,6 +176,8 @@ pip_packages:
 - name: pdf2image
   state: present
 - name: gpt4all
+  state: latest
+- name: pydo
   state: latest
 
 # Set to 'true' to configure Sublime Text.
