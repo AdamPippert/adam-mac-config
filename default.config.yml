@@ -87,12 +87,14 @@ homebrew_installed_packages:
   - php
   - podman
   - podman-compose
+  - koekeishiya/formulae/skhd
   - ssh-copy-id
   - cowsay
   - readline
   - openssl
   - pv
   - tmux
+  - koekeishiya/formulae/yabai
   - yarn
   - youtube-dl
   - wget
