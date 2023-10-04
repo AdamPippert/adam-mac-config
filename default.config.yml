@@ -140,10 +140,10 @@ pip_packages:
 - name: ansible
   state: present # present/absent/latest, default: present
   version: "2.10" # default: N/A
-- name: ansible-playbook
-  state: present
-- name: ansible-runbook
-  state: present
+#- name: ansible-playbook # No longer independently installed in brew
+#  state: present
+#- name: ansible-runbook # No longer independently installed in brew
+#  state: present
 - name: ansible-rulebook
   state: present
 - name: langchain
