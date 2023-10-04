@@ -1,7 +1,7 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: true
+configure_dotfiles: false
 configure_terminal: true
 configure_osx: false
 
@@ -46,6 +46,7 @@ dotfiles_files:
   - .osx
   - .vimrc
   - .emacs
+  - .config/*
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
@@ -56,6 +57,8 @@ homebrew_installed_packages:
   - doxygen
   - emacs
   - evince
+  - fd  
+  - fzf
   - ffmpeg
   - gettext
   - gifsicle
@@ -89,10 +92,12 @@ homebrew_installed_packages:
   - readline
   - openssl
   - pv
+  - tmux
+  - yarn
   - youtube-dl
   - wget
   - wrk
-  - zsh-history-substring-search
+#  - zsh-history-substring-search
 
 homebrew_taps:
   - homebrew/core
@@ -100,12 +105,15 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - basictex
   - chromedriver
   - docker
 #  - firefox - installed by corporate tool
   - gimp
 #  - google-chrome - installed by corporate tool
   - handbrake
+  - keycastr
+  - kitty
   - licecap
   - obs
   - podman-desktop
@@ -140,22 +148,43 @@ pip_packages:
 - name: ansible
   state: present # present/absent/latest, default: present
   version: "2.10" # default: N/A
+<<<<<<< HEAD
 #- name: ansible-playbook # No longer independently installed in brew
 #  state: present
 #- name: ansible-runbook # No longer independently installed in brew
 #  state: present
+=======
+>>>>>>> refs/remotes/origin/master
 - name: ansible-rulebook
   state: present
 - name: langchain
-  state: present
+  state: latest
 - name: openai
-  state: present
+  state: latest
 - name: gmail
   state: present
 - name: Sphinx
   state: present
+- name: gunicorn
+  state: present
+- name: django
+  state: present
 - name: jmespath
   state: present
+- name: pypdf
+  state: present
+- name: toml
+  state: present
+- name: pygpt4all
+  state: present
+- name: chromadb
+  state: latest
+- name: pdf2image
+  state: present
+- name: gpt4all
+  state: latest
+- name: pydo
+  state: latest
 
 # Set to 'true' to configure Sublime Text.
 configure_sublime: false
