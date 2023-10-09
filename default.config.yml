@@ -145,10 +145,13 @@ gem_packages: []
 # - name: bundler
 #   state: present # present/absent/latest, default: present
 #   version: "~> 1.15.1" # default: N/A
-npm_packages: []
+npm_packages: 
 # - name: webpack
 #   state: present # present/absent/latest, default: present
 #   version: "^2.6" # default: N/A
+- name: "@ansible/ansible-language-server"
+  state: latest
+
 pip_packages: 
 - name: ansible
   state: present # present/absent/latest, default: present
