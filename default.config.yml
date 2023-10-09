@@ -72,6 +72,7 @@ homebrew_installed_packages:
   - ipython
   - jupyterlab
   - kafka
+  - lazygit
   - ledger
   - libcaca
   - libevent
@@ -87,6 +88,7 @@ homebrew_installed_packages:
   - php
   - podman
   - podman-compose
+  - ripgrep
   - koekeishiya/formulae/skhd
   - ssh-copy-id
   - cowsay
