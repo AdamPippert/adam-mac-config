@@ -1,7 +1,7 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: false
+configure_dotfiles: true
 configure_terminal: true
 configure_osx: false
 
@@ -36,7 +36,7 @@ sudoers_custom_config: ''
 
 dotfiles_repo: https://github.com/AdamPippert/dotfiles.git
 dotfiles_repo_version: main # this is now the default post 2020
-dotfiles_repo_accept_hostkey: true
+dotfiles_repo_accept_hostkey: false
 dotfiles_repo_local_destination: ~/Development/dotfiles
 dotfiles_files:
   - .zshrc
@@ -46,7 +46,8 @@ dotfiles_files:
   - .osx
   - .vimrc
   - .emacs
-  - .config/*
+  - .yabairc
+  - .config
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
@@ -90,6 +91,7 @@ homebrew_installed_packages:
   - podman
   - podman-compose
   - ripgrep
+  - rust
   - koekeishiya/formulae/skhd
   - ssh-copy-id
   - cowsay
