@@ -1,0 +1,224 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: true
+configure_terminal: true
+configure_osx: false
+
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: true
+dockitems_remove: 
+# - Launchpad
+  - TV
+  - Podcasts
+  - 'App Store'
+  - Freeform
+  - Reminders
+  - Contacts
+  - Notes
+  - Maps
+dockitems_persist: 
+# - name: "Sublime Text"
+#   path: "/Applications/Sublime Text.app/"
+#   pos: 5
+- name: "System Settings"
+  path: "/Applications/System Settings.app/"
+  pos: 3
+- name: "Arc"
+  path: "/Applications/Arc.app"
+
+configure_sudoers: false
+sudoers_custom_config: ''
+# Example:
+# sudoers_custom_config: |
+#   # Allow users in admin group to use sudo with no password.
+#   %admin ALL=(ALL) NOPASSWD: ALL
+
+dotfiles_repo: https://github.com/AdamPippert/dotfiles.git
+dotfiles_repo_version: main # this is now the default post 2020
+dotfiles_repo_accept_hostkey: false
+dotfiles_repo_local_destination: ~/Development/dotfiles
+dotfiles_files:
+  - .zshrc
+  - .gitconfig
+  - .gitignore
+#  - .inputrc
+  - .osx
+  - .vimrc
+  - .emacs
+  - .yabairc
+  - .config
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  - autoconf
+  - awscli
+  - azure-cli
+  - bash-completion
+<<<<<<< HEAD
+  - coreutils
+=======
+  - certbot
+>>>>>>> refs/remotes/origin/master
+  - doxygen
+  - emacs
+  - evince
+  - fd  
+  - fzf
+  - ffmpeg
+  - gettext
+  - gifsicle
+  - git
+  - gh
+  - go
+  - gpg
+  - gnuplot
+  - httpie
+  - iperf
+  - ipython
+  - jupyterlab
+  - kafka
+  - lazygit
+  - ledger
+  - libcaca
+  - libevent
+  - lolcat
+  - lua
+  - ncurses
+  - sqlite
+  - mcrypt
+  - nmap
+  - node
+  - nvm
+  - octave
+  - php
+  - podman
+  - podman-compose
+<<<<<<< HEAD
+  - pv
+=======
+  - ripgrep
+  - rust
+  - koekeishiya/formulae/skhd
+>>>>>>> refs/remotes/origin/master
+  - ssh-copy-id
+  - cowsay
+  - readline
+  - openssl
+  - pv
+  - tmux
+  - koekeishiya/formulae/yabai
+  - yarn
+  - youtube-dl
+  - wget
+  - wrk
+#  - zsh-history-substring-search
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - basictex
+  - chromedriver
+  - docker
+#  - firefox - installed by corporate tool
+  - gimp
+#  - google-chrome - installed by corporate tool
+  - handbrake
+  - keycastr
+  - kitty
+  - licecap
+  - obs
+  - podman-desktop
+  - sequel-ace
+  - slack
+  - transmit
+  - vlc
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps: []
+mas_email: ""
+mas_password: ""
+
+osx_script: "~/.osx --no-restart"
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+cargo_packages:
+  - name: exa
+    state: present
+  - name: irust
+    state: present
+composer_packages: []
+# - name: drush
+#   state: present # present/absent, default: present
+#   version: "^8.1" # default: N/A
+gem_packages: []
+# - name: bundler
+#   state: present # present/absent/latest, default: present
+#   version: "~> 1.15.1" # default: N/A
+npm_packages: 
+# - name: webpack
+#   state: present # present/absent/latest, default: present
+#   version: "^2.6" # default: N/A
+- name: "@ansible/ansible-language-server"
+  state: latest
+
+pip_packages: 
+- name: ansible
+  state: present # present/absent/latest, default: present
+  version: "2.10" # default: N/A
+- name: ansible-rulebook
+  state: present
+- name: langchain
+  state: latest
+- name: openai
+  state: latest
+- name: gmail
+  state: present
+- name: Sphinx
+  state: present
+- name: gunicorn
+  state: present
+- name: django
+  state: present
+- name: jmespath
+  state: present
+- name: pypdf
+  state: present
+- name: toml
+  state: present
+- name: pygpt4all
+  state: present
+- name: chromadb
+  state: latest
+- name: pdf2image
+  state: present
+- name: gpt4all
+  state: latest
+- name: pydo
+  state: latest
+
+# Set to 'true' to configure Sublime Text.
+configure_sublime: false
+#sublime_base_path: '~/Library/Application Support/Sublime Text'
+#sublime_config_path: "Packages/User"
+#sublime_package_control:
+#  - "DocBlockr"
+#  - "Dockerfile Syntax Highlighting"
+#  - "FileDiffs"
+#  - "GitHub Flavored Markdown Preview"
+#  - "Jinja2"
+#  - "Package Control"
+#  - "PHP-Twig"
+#  - "Pretty JSON"
+#  - "SublimeLinter"
+#  - "SublimeLinter-contrib-yamllint"
+#  - "TrailingSpaces"
+#  - "WordCount"
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
