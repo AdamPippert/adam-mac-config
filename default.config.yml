@@ -54,6 +54,7 @@ homebrew_installed_packages:
   - awscli
   - azure-cli
   - bash-completion
+  - coreutils
   - doxygen
   - emacs
   - evince
@@ -87,6 +88,7 @@ homebrew_installed_packages:
   - php
   - podman
   - podman-compose
+  - pv
   - ssh-copy-id
   - cowsay
   - readline
