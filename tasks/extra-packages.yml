@@ -3,8 +3,9 @@
   community.general.cargo:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
-    version: "{{ item.version | default('omit') }}"
+    version: "{{ item.version | default(omit) }}"
   loop: "{{ cargo_packages }}"
+
 - name: Install global Composer packages.
   composer:
     command: "{{ (item.state | default('present') == 'absent') | ternary('remove', 'require') }}"
