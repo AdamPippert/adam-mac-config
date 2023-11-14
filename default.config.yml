@@ -192,13 +192,14 @@ pip_packages:
 
 cargo_packages:
   - name: rand
-    state: present
+    state: latest
   - name: tokio
-    state: present
+    state: latest
   - name: time
-    state: present
+    state: latest
   - name: prost
-    state: present
+    state: latest
+
 # Set to 'true' to configure Sublime Text.
 configure_sublime: false
 # sublime_base_path: '~/Library/Application Support/Sublime Text'
