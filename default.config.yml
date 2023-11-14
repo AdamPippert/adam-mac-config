@@ -7,8 +7,8 @@ configure_osx: false
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
-dockitems_remove: 
-# - Launchpad
+dockitems_remove:
+  # - Launchpad
   - TV
   - Podcasts
   - 'App Store'
@@ -17,15 +17,15 @@ dockitems_remove:
   - Contacts
   - Notes
   - Maps
-dockitems_persist: 
-# - name: "Sublime Text"
-#   path: "/Applications/Sublime Text.app/"
-#   pos: 5
-- name: "System Settings"
-  path: "/Applications/System Settings.app/"
-  pos: 3
-- name: "Arc"
-  path: "/Applications/Arc.app"
+dockitems_persist:
+  # - name: "Sublime Text"
+  #   path: "/Applications/Sublime Text.app/"
+  #   pos: 5
+  - name: "System Settings"
+    path: "/Applications/System Settings.app/"
+    pos: 3
+  - name: "Arc"
+    path: "/Applications/Arc.app"
 
 configure_sudoers: false
 sudoers_custom_config: ''
@@ -35,14 +35,14 @@ sudoers_custom_config: ''
 #   %admin ALL=(ALL) NOPASSWD: ALL
 
 dotfiles_repo: https://github.com/AdamPippert/dotfiles.git
-dotfiles_repo_version: main # this is now the default post 2020
+dotfiles_repo_version: main  # this is now the default post 2020
 dotfiles_repo_accept_hostkey: false
 dotfiles_repo_local_destination: ~/Development/dotfiles
 dotfiles_files:
   - .zshrc
   - .gitconfig
   - .gitignore
-#  - .inputrc
+  # - .inputrc
   - .osx
   - .vimrc
   - .emacs
@@ -55,12 +55,11 @@ homebrew_installed_packages:
   - awscli
   - azure-cli
   - bash-completion
-  - coreutils
   - certbot
   - doxygen
   - emacs
   - evince
-  - fd  
+  - fd
   - fzf
   - ffmpeg
   - gettext
@@ -73,6 +72,7 @@ homebrew_installed_packages:
   - httpie
   - iperf
   - ipython
+  - jq
   - jupyterlab
   - kafka
   - lazygit
@@ -91,7 +91,6 @@ homebrew_installed_packages:
   - php
   - podman
   - podman-compose
-  - pv
   - ripgrep
   - rust
   - koekeishiya/formulae/skhd
@@ -117,9 +116,9 @@ homebrew_cask_apps:
   - basictex
   - chromedriver
   - docker
-#  - firefox - installed by corporate tool
+  #  - firefox - installed by corporate tool
   - gimp
-#  - google-chrome - installed by corporate tool
+  #  - google-chrome - installed by corporate tool
   - handbrake
   - keycastr
   - kitty
@@ -141,11 +140,6 @@ osx_script: "~/.osx --no-restart"
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
 # installed, eg. through homebrew.
-cargo_packages:
-  - name: exa
-    state: present
-  - name: irust
-    state: present
 composer_packages: []
 # - name: drush
 #   state: present # present/absent, default: present
@@ -154,53 +148,53 @@ gem_packages: []
 # - name: bundler
 #   state: present # present/absent/latest, default: present
 #   version: "~> 1.15.1" # default: N/A
-npm_packages: 
-# - name: webpack
-#   state: present # present/absent/latest, default: present
-#   version: "^2.6" # default: N/A
-- name: "@ansible/ansible-language-server"
-  state: latest
+npm_packages:
+  #  - name: webpack
+  #    state: present # present/absent/latest, default: present
+  #    version: "^2.6" # default: N/A
+  - name: "@ansible/ansible-language-server"
+    state: latest
 
-pip_packages: 
-- name: ansible
-  state: present # present/absent/latest, default: present
-  version: "2.10" # default: N/A
-- name: ansible-rulebook
-  state: present
-- name: langchain
-  state: latest
-- name: openai
-  state: latest
-- name: gmail
-  state: present
-- name: Sphinx
-  state: present
-- name: gunicorn
-  state: present
-- name: django
-  state: present
-- name: jmespath
-  state: present
-- name: pypdf
-  state: present
-- name: toml
-  state: present
-- name: pygpt4all
-  state: present
-- name: chromadb
-  state: latest
-- name: pdf2image
-  state: present
-- name: gpt4all
-  state: latest
-- name: pydo
-  state: latest
+pip_packages:
+  - name: ansible
+    state: present  # present/absent/latest, default: present
+    version: "2.10"  # default: N/A
+  - name: ansible-rulebook
+    state: present
+  - name: langchain
+    state: latest
+  - name: openai
+    state: latest
+  - name: gmail
+    state: present
+  - name: Sphinx
+    state: present
+  - name: gunicorn
+    state: present
+  - name: django
+    state: present
+  - name: jmespath
+    state: present
+  - name: pypdf
+    state: present
+  - name: toml
+    state: present
+  - name: pygpt4all
+    state: present
+  - name: chromadb
+    state: latest
+  - name: pdf2image
+    state: present
+  - name: gpt4all
+    state: latest
+  - name: pydo
+    state: latest
 
 # Set to 'true' to configure Sublime Text.
 configure_sublime: false
-#sublime_base_path: '~/Library/Application Support/Sublime Text'
-#sublime_config_path: "Packages/User"
-#sublime_package_control:
+# sublime_base_path: '~/Library/Application Support/Sublime Text'
+# sublime_config_path: "Packages/User"
+# sublime_package_control:
 #  - "DocBlockr"
 #  - "Dockerfile Syntax Highlighting"
 #  - "FileDiffs"
