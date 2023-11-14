@@ -190,6 +190,15 @@ pip_packages:
   - name: pydo
     state: latest
 
+cargo_packages:
+  - name: rand
+    state: present
+  - name: tokio
+    state: present
+  - name: time
+    state: present
+  - name: prost
+    state: present
 # Set to 'true' to configure Sublime Text.
 configure_sublime: false
 # sublime_base_path: '~/Library/Application Support/Sublime Text'
