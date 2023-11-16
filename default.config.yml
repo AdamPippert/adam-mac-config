@@ -191,6 +191,8 @@ pip_packages:
     state: latest
   - name: pydantic
     state: latest
+  - name: instructor
+    state: latest
 
 cargo_packages:
   - name: rustup
