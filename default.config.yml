@@ -189,13 +189,15 @@ pip_packages:
     state: latest
   - name: pydo
     state: latest
+  - name: pydantic
+    state: latest
 
 cargo_packages:
-  - name: rand
+  - name: rustup
     state: latest
-  - name: tokio
+  - name: clippy
     state: latest
-  - name: time
+  - name: dotenvy
     state: latest
   - name: prost
     state: latest
