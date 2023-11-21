@@ -51,6 +51,7 @@ dotfiles_files:
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
+  - asdf
   - autoconf
   - awscli
   - azure-cli
