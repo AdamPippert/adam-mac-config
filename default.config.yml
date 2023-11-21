@@ -64,6 +64,7 @@ homebrew_installed_packages:
   - fd
   - fzf
   - ffmpeg
+  - gawk
   - gettext
   - gifsicle
   - git
