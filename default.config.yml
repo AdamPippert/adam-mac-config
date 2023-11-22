@@ -196,6 +196,8 @@ pip_packages:
     state: latest
   - name: instructor
     state: latest
+  - name: rich
+    state: latest
 
 cargo_packages:
   - name: rustup
