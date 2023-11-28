@@ -51,7 +51,7 @@ dotfiles_files:
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
-  - asdf
+  # - asdf # Installed via shell
   - autoconf
   - awscli
   - azure-cli
@@ -198,16 +198,19 @@ pip_packages:
     state: latest
   - name: rich
     state: latest
-
-cargo_packages:
-  - name: rustup
+  - name: instabot
     state: latest
-  - name: clippy
+  - name: tweepy
     state: latest
-  - name: dotenvy
-    state: latest
-  - name: prost
-    state: latest
+cargo_packages: []
+  #  - name: rustup
+  #  state: latest
+  #- name: clippy
+  #  state: latest
+  #- name: dotenvy
+  #  state: latest
+  #- name: prost
+  #  state: latest
 
 # Set to 'true' to configure Sublime Text.
 configure_sublime: false
