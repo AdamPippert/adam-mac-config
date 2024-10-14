@@ -1,4 +1,4 @@
----
+-
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
@@ -86,7 +86,6 @@ homebrew_installed_packages:
   - lua
   - ncurses
   - sqlite
-  - mcrypt
   - nmap
   - node
   - nvm
