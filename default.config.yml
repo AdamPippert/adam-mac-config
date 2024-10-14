@@ -110,8 +110,7 @@ homebrew_installed_packages:
   - wrk
 #  - zsh-history-substring-search
 
-homebrew_taps:
-  - homebrew/cask
+homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -126,7 +125,7 @@ homebrew_cask_apps:
   - kitty
   - licecap
   - obs
-  - podman-desktop
+  # - podman-desktop - installed by standalone download pre-script
   - sequel-ace
   - slack
   - transmit
