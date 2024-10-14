@@ -111,7 +111,6 @@ homebrew_installed_packages:
 #  - zsh-history-substring-search
 
 homebrew_taps:
-  - homebrew/core
   - homebrew/cask
 
 homebrew_cask_appdir: /Applications
