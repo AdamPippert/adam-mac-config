@@ -1,0 +1,17 @@
+---
+- name: Ensure wallpaper directory exists
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/Pictures/Wallpapers"
+    state: directory
+    mode: '0755'
+
+- name: Copy wallpaper file
+  ansible.builtin.copy:
+    src: files/wallpaper/tokyo-street.heic
+    dest: "{{ ansible_env.HOME }}/Pictures/Wallpapers/tokyo-street.heic"
+    mode: '0644'
+
+- name: Set desktop wallpaper
+  ansible.builtin.shell: |
+    osascript -e 'tell application "System Events" to tell every desktop to set picture to "{{ ansible_env.HOME }}/Pictures/Wallpapers/tokyo-street.heic"'
+  changed_when: false  # This will always report as "ok" since we can't easily check if wallpaper changed
