@@ -151,6 +151,9 @@ mas_password: ""
 
 osx_script: "~/.osx --no-restart"
 
+# Desktop customization
+default_wallpaper: tokyo-street.heic
+
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
 # installed, eg. through homebrew.

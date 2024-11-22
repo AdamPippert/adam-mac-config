@@ -5,13 +5,27 @@
     state: directory
     mode: '0755'
 
-- name: Copy wallpaper file
+- name: Copy all wallpapers
   ansible.builtin.copy:
-    src: files/wallpaper/tokyo-street.heic
-    dest: "{{ ansible_env.HOME }}/Pictures/Wallpapers/tokyo-street.heic"
+    src: "files/wallpaper/"
+    dest: "{{ ansible_env.HOME }}/Pictures/Wallpapers/"
     mode: '0644'
 
-- name: Set desktop wallpaper
+- name: Set default desktop wallpaper
   ansible.builtin.shell: |
-    osascript -e 'tell application "System Events" to tell every desktop to set picture to "{{ ansible_env.HOME }}/Pictures/Wallpapers/tokyo-street.heic"'
+    osascript -e 'tell application "System Events" to tell every desktop to set picture to "{{ ansible_env.HOME }}/Pictures/Wallpapers/{{ default_wallpaper }}"'
   changed_when: false  # This will always report as "ok" since we can't easily check if wallpaper changed
+
+- name: Print available wallpapers
+  ansible.builtin.shell: |
+    echo "Available wallpapers in {{ ansible_env.HOME }}/Pictures/Wallpapers/:"
+    ls -1 "{{ ansible_env.HOME }}/Pictures/Wallpapers/"
+  register: wallpaper_list
+  changed_when: false
+
+- name: Display available wallpapers
+  ansible.builtin.debug:
+    msg: |
+      Current default wallpaper: {{ default_wallpaper }}
+      Available wallpapers:
+      {{ wallpaper_list.stdout_lines | to_nice_yaml }}
