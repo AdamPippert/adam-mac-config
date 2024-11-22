@@ -1,0 +1,31 @@
+---
+- name: Create Applications directory if it doesn't exist
+  file:
+    path: "/Applications"
+    state: directory
+    mode: '0755'
+  become: true
+
+- name: Check if Windsurf is installed
+  stat:
+    path: "/Applications/Windsurf.app"
+  register: windsurf_check
+
+- name: Download and install Windsurf
+  block:
+    - name: Create temporary download directory
+      file:
+        path: "{{ downloads }}/windsurf"
+        state: directory
+        mode: '0755'
+
+    - name: Download Windsurf installer
+      get_url:
+        url: "{{ windsurf_download_url }}"
+        dest: "{{ downloads }}/windsurf/"
+      when: not windsurf_check.stat.exists
+
+    - name: Install Windsurf
+      command: "open {{ downloads }}/windsurf/Windsurf.dmg"
+      when: not windsurf_check.stat.exists
+  when: not windsurf_check.stat.exists

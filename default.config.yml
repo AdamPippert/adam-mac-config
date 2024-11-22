@@ -3,7 +3,10 @@ downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
 configure_terminal: true
-configure_osx: false
+configure_osx: true
+
+# Windsurf configuration
+windsurf_download_url: "https://github.com/codeium/windsurf/releases/latest/download/Windsurf.dmg"
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
@@ -27,12 +30,13 @@ dockitems_persist:
   - name: "Arc"
     path: "/Applications/Arc.app"
 
-configure_sudoers: false
-sudoers_custom_config: ''
-# Example:
-# sudoers_custom_config: |
-#   # Allow users in admin group to use sudo with no password.
-#   %admin ALL=(ALL) NOPASSWD: ALL
+configure_sudoers: true
+sudoers_custom_config: |
+  # Allow users in admin group to use sudo with no password for specific commands
+  %admin ALL=(ALL) NOPASSWD: /opt/homebrew/bin/brew
+  %admin ALL=(ALL) NOPASSWD: /usr/sbin/installer
+  %admin ALL=(ALL) NOPASSWD: /usr/bin/xcode-select
+  %admin ALL=(ALL) NOPASSWD: /usr/bin/xcodebuild
 
 dotfiles_repo: https://github.com/AdamPippert/dotfiles.git
 dotfiles_repo_version: main  # this is now the default post 2020
@@ -48,9 +52,11 @@ dotfiles_files:
   - .emacs
   - .yabairc
   - .config
+  - .windsurf
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
+  - antigen
   # - asdf # Installed via shell
   - autoconf
   - awscli
@@ -88,6 +94,7 @@ homebrew_installed_packages:
   - sqlite
   - nmap
   - node
+  - nvim
   - nvm
   - octave
   - php
@@ -107,6 +114,7 @@ homebrew_installed_packages:
   - youtube-dl
   - wget
   - wrk
+  - zoxide
 #  - zsh-history-substring-search
 
 homebrew_taps: []
@@ -129,6 +137,7 @@ homebrew_cask_apps:
   - slack
   - transmit
   - vlc
+  - windsurf
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []

@@ -46,6 +46,9 @@
       when: configure_sublime
       tags: ['sublime-text']
 
+    - import_tasks: tasks/manual-apps.yml
+      tags: ['manual-apps']
+
     - name: Run post-provision task files in a block.
       tags: ['post']
       block:
