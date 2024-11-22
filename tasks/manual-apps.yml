@@ -1,11 +1,4 @@
 ---
-- name: Create Applications directory if it doesn't exist
-  file:
-    path: "/Applications"
-    state: directory
-    mode: '0755'
-  become: true
-
 - name: Check if Windsurf is installed
   stat:
     path: "/Applications/Windsurf.app"
