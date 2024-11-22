@@ -111,7 +111,7 @@ homebrew_installed_packages:
   - tmux
   - koekeishiya/formulae/yabai
   - yarn
-  - youtube-dl
+  - yt-dlp
   - wget
   - wrk
   - zoxide
@@ -122,7 +122,7 @@ homebrew_taps: []
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - basictex
-  - chromedriver
+  - chromedriver-beta
   - docker
   #  - firefox - installed by corporate tool
   - gimp
@@ -165,12 +165,13 @@ npm_packages:
 
 pip_packages:
   - name: ansible
-    state: present  # present/absent/latest, default: present
+    state: present
     version: "9.3.0"  # Latest stable version as of Feb 2024
   - name: ansible-rulebook
     state: present
   - name: langchain
-    state: latest
+    state: present
+    version: "0.1.9"  # Latest stable version as of Feb 2024
   - name: openai
     state: latest
   - name: gmail
@@ -181,6 +182,7 @@ pip_packages:
     state: present
   - name: django
     state: present
+    version: "5.0.2"  # Latest LTS version as of Feb 2024
   - name: jmespath
     state: present
   - name: pypdf
@@ -190,7 +192,8 @@ pip_packages:
   - name: pygpt4all
     state: present
   - name: chromadb
-    state: latest
+    state: present
+    version: "0.4.22"  # Latest stable version as of Feb 2024
   - name: pdf2image
     state: present
   - name: gpt4all
@@ -198,9 +201,8 @@ pip_packages:
   - name: pydo
     state: latest
   - name: pydantic
-    state: latest
-  - name: instructor
-    state: latest
+    state: present
+    version: "2.6.1"  # Latest stable version as of Feb 2024
   - name: rich
     state: latest
   - name: instabot
