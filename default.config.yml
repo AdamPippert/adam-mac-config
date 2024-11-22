@@ -166,7 +166,7 @@ npm_packages:
 pip_packages:
   - name: ansible
     state: present  # present/absent/latest, default: present
-    version: "2.10"  # default: N/A
+    version: "9.3.0"  # Latest stable version as of Feb 2024
   - name: ansible-rulebook
     state: present
   - name: langchain
