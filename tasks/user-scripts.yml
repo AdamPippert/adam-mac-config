@@ -1,0 +1,21 @@
+---
+- name: Ensure ~/.local/bin directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.local/bin"
+    state: directory
+    mode: '0755'
+
+- name: Copy user scripts to ~/.local/bin
+  copy:
+    src: "files/scripts/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.local/bin/"
+    mode: '0755'
+  with_items:
+    - vidgrabber.sh
+
+- name: Ensure ~/.local/bin is in PATH
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.zshrc"
+    line: 'export PATH="$HOME/.local/bin:$PATH"'
+    state: present
+    create: yes

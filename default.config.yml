@@ -8,6 +8,12 @@ configure_osx: true
 # Windsurf configuration
 windsurf_download_url: "https://github.com/codeium/windsurf/releases/latest/download/Windsurf.dmg"
 
+# Git repositories to clone
+git_repositories:
+  - name: fabric
+    repo: https://github.com/danielmiessler/fabric.git
+    version: main
+
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
 dockitems_remove:

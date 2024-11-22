@@ -49,6 +49,12 @@
     - import_tasks: tasks/manual-apps.yml
       tags: ['manual-apps']
 
+    - import_tasks: tasks/git-repos.yml
+      tags: ['git-repos']
+
+    - import_tasks: tasks/user-scripts.yml
+      tags: ['scripts']
+
     - name: Run post-provision task files in a block.
       tags: ['post']
       block:

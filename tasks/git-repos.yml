@@ -1,0 +1,21 @@
+---
+- name: Ensure Development directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/Development"
+    state: directory
+    mode: '0755'
+
+- name: Clone or update git repositories
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ ansible_env.HOME }}/Development/{{ item.name }}"
+    version: "{{ item.version | default('main') }}"
+    update: yes
+  with_items: "{{ git_repositories }}"
+
+- name: Set execute permissions for fabric binary
+  file:
+    path: "{{ ansible_env.HOME }}/Development/fabric/fabric"
+    mode: '0755'
+  when: "'fabric' in item.name"
+  with_items: "{{ git_repositories }}"
