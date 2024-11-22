@@ -137,7 +137,6 @@ homebrew_cask_apps:
   - slack
   - transmit
   - vlc
-  - windsurf
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
