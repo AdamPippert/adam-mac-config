@@ -1,0 +1,6 @@
+---
+- name: Install Bootc
+  homebrew:
+    name: bootc
+    state: present
+  tags: ['bootc']

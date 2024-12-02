@@ -47,11 +47,24 @@ if [ -n "$SUBTITLE_FILE" ]; then
         echo "## Transcription"
         echo
         # Convert SRT to plain text, removing timestamps and line numbers
-        sed -E 's/^[0-9]+$//' "$SUBTITLE_FILE" | # Remove line numbers
+        cat "$SUBTITLE_FILE" | \
+        sed -E 's/^[0-9]+$//' | # Remove line numbers
         sed -E 's/^[0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3} --> [0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3}$//' | # Remove timestamps
-        sed -E '/^$/d' | # Remove empty lines
-        sed -E 's/^/> /' # Add markdown quote formatting
-    } > "$VIDEO_DIR/transcription.md"
+        awk '
+            BEGIN { prev = "" }
+            /^$/ { next }  # Skip empty lines
+            {
+                if ($0 != prev) {  # Only print if line is different from previous
+                    if (!($0 ~ /^> /)) {  # If line doesnt start with "> ", add it
+                        print "> " $0
+                    } else {  # If it already has "> ", print as is
+                        print $0
+                    }
+                    prev = $0
+                }
+            }
+        ' > "$VIDEO_DIR/transcription.md"
+    }
 
     # Generate summary using fabric
     echo "Generating summary..."

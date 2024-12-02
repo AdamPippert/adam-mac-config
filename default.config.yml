@@ -20,7 +20,7 @@ dockitems_remove:
   # - Launchpad
   - TV
   - Podcasts
-  - 'App Store'
+  - "App Store"
   - Freeform
   - Reminders
   - Contacts
@@ -45,7 +45,7 @@ sudoers_custom_config: |
   %admin ALL=(ALL) NOPASSWD: /usr/bin/xcodebuild
 
 dotfiles_repo: https://github.com/AdamPippert/dotfiles.git
-dotfiles_repo_version: main  # this is now the default post 2020
+dotfiles_repo_version: main # this is now the default post 2020
 dotfiles_repo_accept_hostkey: false
 dotfiles_repo_local_destination: ~/Development/dotfiles
 dotfiles_files:
@@ -106,6 +106,7 @@ homebrew_installed_packages:
   - php
   - podman
   - podman-compose
+  - python-distutils
   - ripgrep
   - rust
   - koekeishiya/formulae/skhd
@@ -175,12 +176,12 @@ npm_packages:
 pip_packages:
   - name: ansible
     state: present
-    version: "9.3.0"  # Latest stable version as of Feb 2024
+    version: "9.3.0" # Latest stable version as of Feb 2024
   - name: ansible-rulebook
     state: present
   - name: langchain
     state: present
-    version: "0.1.9"  # Latest stable version as of Feb 2024
+    version: "0.1.9" # Latest stable version as of Feb 2024
   - name: openai
     state: latest
   - name: gmail
@@ -191,7 +192,7 @@ pip_packages:
     state: present
   - name: django
     state: present
-    version: "5.0.2"  # Latest LTS version as of Feb 2024
+    version: "5.0.2" # Latest LTS version as of Feb 2024
   - name: jmespath
     state: present
   - name: pypdf
@@ -202,7 +203,7 @@ pip_packages:
     state: present
   - name: chromadb
     state: present
-    version: "0.4.22"  # Latest stable version as of Feb 2024
+    version: "0.4.22" # Latest stable version as of Feb 2024
   - name: pdf2image
     state: present
   - name: gpt4all
@@ -211,7 +212,7 @@ pip_packages:
     state: latest
   - name: pydantic
     state: present
-    version: "2.6.1"  # Latest stable version as of Feb 2024
+    version: "2.6.1" # Latest stable version as of Feb 2024
   - name: rich
     state: latest
   - name: instabot
@@ -221,7 +222,8 @@ pip_packages:
   - name: ollama
     state: latest
 
-cargo_packages: []
+cargo_packages:
+  []
   #  - name: rustup
   #  state: latest
   #- name: clippy

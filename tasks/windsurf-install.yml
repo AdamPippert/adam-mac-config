@@ -1,0 +1,18 @@
+---
+- name: Install Windsurf
+  get_url:
+    url: "https://github.com/codeium/windsurf/releases/latest/download/Windsurf.dmg"
+    dest: "/tmp/Windsurf.dmg"
+  tags: ['windsurf']
+
+- name: Mount Windsurf DMG
+  command: hdiutil attach /tmp/Windsurf.dmg
+  tags: ['windsurf']
+
+- name: Install Windsurf
+  command: cp -R /Volumes/Windsurf/Windsurf.app /Applications/
+  tags: ['windsurf']
+
+- name: Unmount Windsurf DMG
+  command: hdiutil detach /Volumes/Windsurf
+  tags: ['windsurf']
