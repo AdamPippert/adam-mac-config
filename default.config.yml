@@ -106,7 +106,7 @@ homebrew_installed_packages:
   - php
   - podman
   - podman-compose
-  - python-distutils
+  - python-setuptools
   - ripgrep
   - rust
   - koekeishiya/formulae/skhd
