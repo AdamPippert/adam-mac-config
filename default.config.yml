@@ -1,7 +1,7 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: true
+configure_dotfiles: false
 configure_terminal: true
 configure_osx: true
 
@@ -61,7 +61,7 @@ dotfiles_files:
   - .windsurf
 
 homebrew_installed_packages:
-  # - ansible # Installed via Pip.
+  - ansible # Installed via Pip.
   - antigen
   # - asdf # Installed via shell
   - autoconf
@@ -84,6 +84,7 @@ homebrew_installed_packages:
   - go
   - gpg
   - gnuplot
+  - hererocks
   - httpie
   - iperf
   - ipython
@@ -172,54 +173,54 @@ npm_packages:
   - name: "@ansible/ansible-language-server"
     state: latest
 
-pip_packages:
-  - name: ansible
-    state: present
-    version: "9.3.0" # Latest stable version as of Feb 2024
-  - name: ansible-rulebook
-    state: present
-  - name: langchain
-    state: present
-    version: "0.1.9" # Latest stable version as of Feb 2024
-  - name: openai
-    state: latest
-  - name: gmail
-    state: present
-  - name: Sphinx
-    state: present
-  - name: gunicorn
-    state: present
-  - name: django
-    state: present
-    version: "5.0.2" # Latest LTS version as of Feb 2024
-  - name: jmespath
-    state: present
-  - name: pypdf
-    state: present
-  - name: toml
-    state: present
-  - name: pygpt4all
-    state: present
-  - name: chromadb
-    state: present
-    version: "0.4.22" # Latest stable version as of Feb 2024
-  - name: pdf2image
-    state: present
-  - name: gpt4all
-    state: latest
-  - name: pydo
-    state: latest
-  - name: pydantic
-    state: present
-    version: "2.6.1" # Latest stable version as of Feb 2024
-  - name: rich
-    state: latest
-  - name: instabot
-    state: latest
-  - name: tweepy
-    state: latest
-  - name: ollama
-    state: latest
+pip_packages: []
+#  - name: ansible
+#    state: present
+#    version: "9.3.0" # Latest stable version as of Feb 2024
+#  - name: ansible-rulebook
+#    state: present
+#  - name: langchain
+#    state: present
+#    version: "0.1.9" # Latest stable version as of Feb 2024
+#  - name: openai
+#    state: latest
+#  - name: gmail
+#    state: present
+#  - name: Sphinx
+#    state: present
+#  - name: gunicorn
+#    state: present
+#  - name: django
+#    state: present
+#    version: "5.0.2" # Latest LTS version as of Feb 2024
+#  - name: jmespath
+#    state: present
+#  - name: pypdf
+#    state: present
+#  - name: toml
+#    state: present
+#  - name: pygpt4all
+#    state: present
+#  - name: chromadb
+#    state: present
+#    version: "0.4.22" # Latest stable version as of Feb 2024
+#  - name: pdf2image
+#    state: present
+#  - name: gpt4all
+#    state: latest
+#  - name: pydo
+#    state: latest
+#  - name: pydantic
+#    state: present
+#    version: "2.6.1" # Latest stable version as of Feb 2024
+#  - name: rich
+#    state: latest
+#  - name: instabot
+#    state: latest
+#  - name: tweepy
+#    state: latest
+#  - name: ollama
+#    state: latest
 
 cargo_packages:
   []
